@@ -3,6 +3,7 @@ import { withStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 
 import "./ViewGallery.css";
+import { BASE_URL } from '../../config/baseUrl';
 
 const styles = (theme) => ({
     root: {
@@ -31,7 +32,7 @@ class ViewGallery extends Component {
             isLoading:true
         });
 
-        fetch('https://apis.edgiav.com/api/gallery', {
+        fetch(BASE_URL+'gallery', {
             method: "GET",
             headers: {
                 "Accept": "application/json",
@@ -60,7 +61,7 @@ class ViewGallery extends Component {
     }
 
     handleDelete = (id) => {
-        fetch('https://apis.edgiav.com/gallery/'+id, {
+        fetch(BASE_URL+'gallery/'+id, {
             method: "DELETE",
             headers: {
                 "Accept": "application/json",

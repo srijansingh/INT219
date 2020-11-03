@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import CardMedia from '@material-ui/core/CardMedia';
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import { BASE_URL } from '../../config/baseUrl';
 
 const  styles = theme => ({
   root: {
@@ -51,7 +52,7 @@ class SingleBlog extends Component{
     }
 
     componentDidMount(){
-        fetch('https://apis.edgiav.com/api/blog/'+this.props.match.params._id, {
+        fetch(BASE_URL+'blog/'+this.props.match.params._id, {
             method: "GET",
             headers: {
                 "Accept": "application/json",

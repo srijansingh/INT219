@@ -5,6 +5,7 @@ import CloudUploadIcon from "@material-ui/icons/CloudUploadRounded";
 import { Editor } from '@tinymce/tinymce-react';
 
 import "./CreateBlog.css";
+import { BASE_URL } from '../../config/baseUrl';
 
 const styles = (theme) => ({
     root: {
@@ -36,7 +37,7 @@ class CreateBlog extends Component {
 
     handleContent =() =>{
         this.setState({isLoading : true})
-        fetch('https://apis.edgiav.com/api/blog', {
+        fetch(BASE_URL+'blog', {
                 method: "POST",
                 headers: {
                     "Accept": "application/json",

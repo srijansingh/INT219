@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 import CustomerComponent from "./component/customerComponent";
+import { BASE_URL } from "../../config/baseUrl";
 
 
 const styles = (theme) => ({
@@ -32,7 +33,7 @@ class  Customer extends Component {
         })
 
 
-        fetch('https://apis.edgiav.com/api/customer', {
+        fetch(BASE_URL+'customer', {
             method: "GET",
             headers: {
                 "Accept": "application/json",

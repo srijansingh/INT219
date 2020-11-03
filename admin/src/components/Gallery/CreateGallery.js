@@ -5,6 +5,7 @@ import CloudUploadIcon from "@material-ui/icons/CloudUploadRounded";
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import firebase from "../../config/firebase";
 import "./CreateGallery.css"
+import { BASE_URL } from '../../config/baseUrl';
 
 const styles = (theme) => ({
     root: {
@@ -52,7 +53,7 @@ class CreateGallery extends Component {
                 this.setState({
                     imagelink : url
                 })
-                fetch('https://apis.edgiav.com/api/gallery', {
+                fetch(BASE_URL + 'gallery', {
                     method: "POST",
                     headers: {
                         "Accept": "application/json",

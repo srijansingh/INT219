@@ -12,6 +12,7 @@ import CreateBlog from './components/Blog/CreateBlog';
 import ViewBlog from './components/Blog/ViewBlog';
 import "./App.css"; 
 import Singleblog from './components/Blog/singleblog';
+import { AUTH_URL } from './config/baseUrl';
 
 
 class App extends Component {
@@ -57,7 +58,7 @@ class App extends Component {
   loginHandler = (event, authData) => {
     event.preventDefault();
     this.setState({ authLoading: true });
-    fetch('https://apis.edgiav.com/auth/login', {
+    fetch(AUTH_URL+'login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

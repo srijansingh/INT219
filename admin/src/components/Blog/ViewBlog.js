@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import CardHeader from '@material-ui/core/CardHeader';
 import Container from '@material-ui/core/Container';
+import { BASE_URL } from '../../config/baseUrl';
 
 
 const styles = theme => ({
@@ -45,7 +46,7 @@ class ViewBlog extends Component {
             isLoading:true
         });
 
-        fetch('https://apis.edgiav.com/api/blog', {
+        fetch(BASE_URL+'blog', {
             method: "GET",
             headers: {
                 "Accept": "application/json",
@@ -73,7 +74,7 @@ class ViewBlog extends Component {
     }
 
     handleDelete = (id) => {
-      fetch('https://apis.edgiav.com/api/blog/'+id, {
+      fetch(BASE_URL+'blog/'+id, {
             method: "DELETE",
             headers: {
                 "Accept": "application/json",
